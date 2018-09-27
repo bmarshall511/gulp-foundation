@@ -1,0 +1,16 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true
+  },
+  "globals": {
+    '$': true,
+    Drupal: true,
+    jQuery: true,
+    process: true,
+    document: true
+  }
+}

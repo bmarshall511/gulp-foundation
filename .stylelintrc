@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "scss/percent-placeholder-pattern": null,
+    "scss/dollar-variable-colon-space-after": null,
+    "selector-no-qualifying-type": null,
+    "selector-max-compound-selectors": 8,
+    "max-nesting-depth": 8,
+    "selector-max-id": 1,
+    "selector-class-pattern": null
+  }
+}
