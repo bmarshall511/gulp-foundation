@@ -7,4 +7,16 @@
 npm install
 ```
 
+## Usage
 
+Development:
+
+```sh
+gulp watch
+```
+
+Production:
+
+```sh
+gulp build
+```
