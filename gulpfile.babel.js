@@ -30,12 +30,12 @@ const siteURL = PROD ? 'https://yoursite.com/' : 'https://yoursite.local/';
 const themeDir = './';
 const foundationDir = themeDir + 'node_modules/foundation-sites/dist/';
 const paths = {
-  js       : `${themeDir}src/js/`,
-  scss     : `${themeDir}src/scss/`,
-  img      : `${themeDir}src/img/`,
-  dist_js  : `${themeDir}js`,
-  dist_css : `${themeDir}css`,
-  dist_img : `${themeDir}img`
+  js       : `${themeDir}js/`,
+  scss     : `${themeDir}sass/`,
+  img      : `${themeDir}img/`,
+  dist_js  : `${themeDir}javascript/`,
+  dist_css : `${themeDir}stylesheets/`,
+  dist_img : `${themeDir}images/`
 };
 
 // JS file configuration, key represents the compiled file name and value being
@@ -78,7 +78,9 @@ const css = {
 /**
  * Deletes files & folders in the compilied CSS, JS & image directories.
  */
-export const clean = () => del([paths.dist_js + '**', paths.dist_css + '**', paths.dist_img + '**']);
+export const clean = () => {
+  return del([paths.dist_js + '**', paths.dist_css + '**', paths.dist_img + '**']);
+}
 
 /**
  * Lints CSS files.
@@ -122,7 +124,7 @@ export const watchSass = () => {
 /**
  * Removes unused CSS styles.
  */
-export const removeUnusedCSS = (done) => {
+export const removeUnusedCSS = done => {
   for (let key in css) {
     gulp.src(paths.dist_css + '/' + key + '.css')
       .pipe(uncss({
@@ -131,7 +133,7 @@ export const removeUnusedCSS = (done) => {
       .pipe(gulp.dest(paths.dist_css));
   }
 
-  return done();
+  done();
 }
 
 /**
@@ -146,18 +148,20 @@ export const lintJS = () => {
 /**
  * Compiles JS files.
  */
-export const compileJS = (done) => {
-  for (let key in js) {
-    gulp.src(js[key])
-      .pipe(cond(!PROD, sourcemaps.init()))
-      .pipe(babel())
-      .pipe(cond(PROD, uglify()))
-      .pipe(concat(key + '.js'))
-      .pipe(cond(!PROD, sourcemaps.write()))
-      .pipe(gulp.dest(paths.dist_js));
+export const compileJS = done => {
+  if ( js.length ) {
+    for (let key in js) {
+      gulp.src(js[key])
+        .pipe(cond(!PROD, sourcemaps.init()))
+        .pipe(babel())
+        .pipe(cond(PROD, uglify()))
+        .pipe(concat(key + '.js'))
+        .pipe(cond(!PROD, sourcemaps.write()))
+        .pipe(gulp.dest(paths.dist_js));
+    }
   }
 
-  return done();
+  done();
 }
 
 /**
@@ -196,4 +200,4 @@ export const generateTODO = () => {
 export const build = gulp.series(clean, lintJS, compileJS, minImages, lintCSS, compileCSS, removeUnusedCSS, generateTODO);
 
 // Runs all build tasks, then watches files for changes to trigger a recompile.
-export const watch = gulp.series(clean, lintJS, compileJS, minImages, lintCSS, compileCSS, generateTODO, gulp.parallel(watchSass, watchJS));
+export const watch = gulp.series(clean, lintJS, compileJS, minImages, lintCSS, compileCSS, generateTODO, gulp.parallel(watchSass, watchJS, watchImages));
