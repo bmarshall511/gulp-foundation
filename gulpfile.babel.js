@@ -33,9 +33,9 @@ const paths = {
   js       : `${themeDir}src/js/`,
   scss     : `${themeDir}src/scss/`,
   img      : `${themeDir}src/img/`,
-  dist_js  : `${themeDir}javascript/`,
-  dist_css : `${themeDir}stylesheets/`,
-  dist_img : `${themeDir}images/`
+  dist_js  : `${themeDir}js/`,
+  dist_css : `${themeDir}css/`,
+  dist_img : `${themeDir}img/`
 };
 
 // JS file configuration, key represents the compiled file name and value being
