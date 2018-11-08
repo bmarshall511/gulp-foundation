@@ -30,9 +30,9 @@ const siteURL = PROD ? 'https://yoursite.com/' : 'https://yoursite.local/';
 const themeDir = './';
 const foundationDir = themeDir + 'node_modules/foundation-sites/dist/';
 const paths = {
-  js       : `${themeDir}js/`,
-  scss     : `${themeDir}sass/`,
-  img      : `${themeDir}img/`,
+  js       : `${themeDir}src/js/`,
+  scss     : `${themeDir}src/scss/`,
+  img      : `${themeDir}src/img/`,
   dist_js  : `${themeDir}javascript/`,
   dist_css : `${themeDir}stylesheets/`,
   dist_img : `${themeDir}images/`
