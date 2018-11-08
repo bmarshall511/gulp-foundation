@@ -149,7 +149,7 @@ export const lintJS = () => {
  * Compiles JS files.
  */
 export const compileJS = done => {
-  if ( js.length ) {
+  if ( Object.keys(js).length ) {
     for (let key in js) {
       gulp.src(js[key])
         .pipe(cond(!PROD, sourcemaps.init()))
