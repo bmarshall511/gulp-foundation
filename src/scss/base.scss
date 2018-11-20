@@ -1,6 +1,4 @@
-@import 'settings';
-@import 'variables';
-@import 'foundation';
+@import 'global/core';
 
 // Global styles
 @include foundation-global-styles;
@@ -57,4 +55,5 @@
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
 
-@import 'components/common';
+@import 'global/header/header';
+@import 'global/footer/footer';

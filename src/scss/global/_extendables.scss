@@ -1,0 +1,39 @@
+// Typography
+%header-font-family {
+  font-family: $header-font-family;
+}
+
+%body-font-family {
+  font-family: $body-font-family;
+}
+
+// Felx grid
+%flex {
+  @include flex;
+}
+
+%flex-wrap {
+  flex-wrap: wrap;
+}
+
+%flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+%flex-cell {
+  padding-left: $small-gutter;
+  padding-right: $small-gutter;
+}
+
+%flex-margin {
+  margin-left: $small-gutter * -1;
+  margin-right: $small-gutter * -1;
+}
+
+%flex-align-right {
+  @include flex-align(right);
+}
+
+%flex-align-middle {
+  @include flex-align(null, middle);
+}
