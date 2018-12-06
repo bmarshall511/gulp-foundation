@@ -5,9 +5,9 @@
   @if ($length > 1) {
     $rest: ();
     @for $i from 2 through $length {
-      $rest: append($rest, nth($keys, $i))
+      $rest: append($rest, nth($keys, $i));
     }
-    @return map-fetch($value, $rest)
+    @return map-fetch($value, $rest);
   } @else {
     @return $value;
   }
