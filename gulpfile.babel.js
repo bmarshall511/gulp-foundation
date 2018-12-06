@@ -62,6 +62,15 @@ const js = {
   'components/foundation-toggler': [
     foundationDir + 'js/plugins/foundation.toggler.js',
   ],
+  'components/foundation-sticky': [
+    foundationDir + 'js/plugins/foundation.sticky.js',
+  ],
+  'components/foundation-reveal': [
+    foundationDir + 'js/plugins/foundation.reveal.js',
+  ],
+  'components/foundation-abide': [
+    foundationDir + 'js/plugins/foundation.abide.js',
+  ],
   foundation: [
     paths.js + 'foundation.js',
   ],
