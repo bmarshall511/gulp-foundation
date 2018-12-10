@@ -1,4 +1,4 @@
-@import 'global/core';
+@import 'core/core';
 
 // Global styles
 @include foundation-global-styles;
@@ -55,5 +55,7 @@
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
 
-@import 'global/header/header';
-@import 'global/footer/footer';
+@import 'site/common';
+
+@import 'site/header/header';
+@import 'site/footer/footer';
