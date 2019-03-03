@@ -8,7 +8,6 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 @import 'core/core';
 
 @media print {
-
   /* Margins */
 
   @page {
@@ -43,11 +42,11 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 
   /* Links */
 
-  a[href^=http]::after {
+  a[href^='http']::after {
     content: ' < ' attr(href) '> ';
   }
 
-  a:after > img {
+  a::after > img {
     content: '';
   }
 
@@ -55,7 +54,7 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
     content: '';
   }
 
-  a:not(:local-link):after {
+  a:not(:local-link)::after {
     content: ' < ' attr(href) '> ';
   }
 }

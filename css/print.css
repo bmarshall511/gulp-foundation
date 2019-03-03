@@ -8,7 +8,7 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 /* stylelint-enable */
 /**
  * Foundation for Sites by ZURB
- * Version 6.5.0-rc.3
+ * Version 6.5.3
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
@@ -36,11 +36,11 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
   dl {
     page-break-before: avoid; }
   /* Links */
-  a[href^=http]::after {
+  a[href^='http']::after {
     content: " < " attr(href) "> "; }
-  a:after > img {
+  a::after > img {
     content: ''; }
   article a[href^='#']::after {
     content: ''; }
-  a:not(:local-link):after {
+  a:not(:local-link)::after {
     content: " < " attr(href) "> "; } }
