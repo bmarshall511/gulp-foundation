@@ -78,8 +78,17 @@ const js = {
   'components/foundation-drilldown': [
     foundationDir + 'js/plugins/foundation.drilldown.js',
   ],
-  'components/foundation-dropdown': [
+  'components/foundation-dropdownmenu': [
     foundationDir + 'js/plugins/foundation.dropdownMenu.js',
+  ],
+  'components/foundation-magellan': [
+    foundationDir + 'js/plugins/foundation.magellan.js',
+  ],
+  'components/foundation-smoothscroll': [
+    foundationDir + 'js/plugins/foundation.smoothScroll.js',
+  ],
+  'components/foundation-accordionmenu': [
+    foundationDir + 'js/plugins/foundation.accordionMenu.js',
   ],
   foundation: [paths.js + 'foundation.js'],
 }
@@ -125,7 +134,7 @@ export const compileCSS = () => {
       }).on('error', sass.logError)
     )
     .pipe(autoprefixer())
-    .pipe(cond(!PROD, sourcemaps.init()))
+    .pipe(cond(!PROD, sourcemaps.write()))
     .pipe(cond(PROD, cssnano()))
     .pipe(gulp.dest(paths.dist_css))
 }
