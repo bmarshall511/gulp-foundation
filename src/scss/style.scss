@@ -13,7 +13,7 @@
 // Generic components
 @include foundation-button;
 //@include foundation-button-group;
-//@include foundation-close-button;
+@include foundation-close-button;
 //@include foundation-label;
 //@include foundation-progress-bar;
 //@include foundation-slider;
@@ -29,7 +29,7 @@
 //@include foundation-tooltip;
 
 // Containers
-//@include foundation-accordion;
+@include foundation-accordion;
 //@include foundation-media-object;
 //@include foundation-orbit;
 //@include foundation-responsive-embed;
@@ -37,13 +37,13 @@
 //@include foundation-thumbnail;
 // Menu-based containers
 @include foundation-menu;
-//@include foundation-menu-icon;
+@include foundation-menu-icon;
 //@include foundation-accordion-menu;
 //@include foundation-drilldown-menu;
-@include foundation-dropdown-menu;
+//@include foundation-dropdown-menu;
 
 // Layout components
-//@include foundation-off-canvas;
+@include foundation-off-canvas;
 //@include foundation-reveal;
 //@include foundation-sticky;
 //@include foundation-title-bar;
@@ -54,6 +54,11 @@
 // @include foundation-flex-classes;
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
+
+// Motion UI
+@import 'motion-ui';
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 // Hamburgers
 //@import 'hamburgers';

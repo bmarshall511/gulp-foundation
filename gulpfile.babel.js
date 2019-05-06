@@ -130,6 +130,7 @@ export const compileCSS = () => {
           `${themeDir}node_modules/breakpoint-sass/stylesheets`,
           `${themeDir}node_modules/foundation-sites/scss`,
           `${themeDir}node_modules/hamburgers/_scss/hamburgers`,
+          `${themeDir}node_modules/motion-ui/src`,
         ],
       }).on('error', sass.logError)
     )
