@@ -16,6 +16,7 @@ import stylelint from 'gulp-stylelint'
 import todo from 'gulp-todo'
 import uglify from 'gulp-uglify'
 import htmlmin from 'gulp-htmlmin';
+import inlinesource from 'gulp-inline-source';
 import { argv } from 'yargs'
 
 // If gulp was called in the terminal with the --prod flag, set the node
@@ -226,7 +227,16 @@ export const compileHTML = () => {
  * Watches HTML file changes
  */
 export const watchHTML = () => {
-  gulp.watch('src/index.html', compileHTML)
+  gulp.watch('src/index.html', compileHTML, inlineCSS)
+}
+
+/**
+ * Inline CSS files in HTML
+ */
+export const inlineCSS = () => {
+  return gulp.src('index.html')
+    .pipe(inlinesource())
+    .pipe(gulp.dest(themeDir));
 }
 
 // Runs all build tasks
@@ -238,7 +248,8 @@ export const build = gulp.series(
   lintCSS,
   compileCSS,
   generateTODO,
-  compileHTML
+  compileHTML,
+  inlineCSS
 )
 
 // Runs all build tasks, then watches files for changes to trigger a recompile.
@@ -251,5 +262,6 @@ export const watch = gulp.series(
   compileCSS,
   generateTODO,
   compileHTML,
+  inlineCSS,
   gulp.parallel(watchSass, watchJS, watchImages, watchHTML)
 )
