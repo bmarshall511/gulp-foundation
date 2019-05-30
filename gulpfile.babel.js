@@ -93,6 +93,20 @@ const js = {
     foundationDir + 'js/plugins/foundation.accordionMenu.js',
   ],
   foundation: [paths.js + 'foundation.js'],
+  demo: [
+    foundationDir + 'js/plugins/foundation.core.js',
+    foundationDir + 'js/plugins/foundation.util.keyboard.js',
+    foundationDir + 'js/plugins/foundation.util.nest.js',
+    foundationDir + 'js/plugins/foundation.util.box.js',
+    foundationDir + 'js/plugins/foundation.util.mediaQuery.js',
+    foundationDir + 'js/plugins/foundation.util.motion.js',
+    foundationDir + 'js/plugins/foundation.util.triggers.js',
+    foundationDir + 'js/plugins/foundation.smoothScroll.js',
+    foundationDir + 'js/plugins/foundation.offcanvas.js',
+    foundationDir + 'js/plugins/foundation.magellan.js',
+    foundationDir + 'js/plugins/foundation.accordionMenu.js',
+    paths.js + 'foundation.js'
+  ]
 }
 /**
  * Deletes files & folders in the compilied CSS, JS & image directories.
