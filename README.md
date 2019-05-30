@@ -15,12 +15,14 @@ Development:
 
 ```sh
 gulp watch
+gulp watch --prod
 ```
 
 Production:
 
 ```sh
 gulp build
+gulp build --prod
 ```
 
 ## Structure
