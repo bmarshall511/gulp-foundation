@@ -222,6 +222,13 @@ export const compileHTML = () => {
     .pipe(gulp.dest(themeDir));
 }
 
+/**
+ * Watches HTML file changes
+ */
+export const watchHTML = () => {
+  gulp.watch('src/index.html', compileHTML)
+}
+
 // Runs all build tasks
 export const build = gulp.series(
   clean,
@@ -244,5 +251,5 @@ export const watch = gulp.series(
   compileCSS,
   generateTODO,
   compileHTML,
-  gulp.parallel(watchSass, watchJS, watchImages)
+  gulp.parallel(watchSass, watchJS, watchImages, watchHTML)
 )

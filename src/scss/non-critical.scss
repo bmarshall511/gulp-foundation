@@ -1,14 +1,7 @@
 @import 'core/core';
 
 // Global styles
-@include foundation-global-styles;
 @include foundation-forms;
-@include foundation-typography;
-
-// Grids (choose one)
-@include foundation-xy-grid-classes;
-// @include foundation-grid;
-// @include foundation-flex-grid;
 
 // Generic components
 @include foundation-button;
