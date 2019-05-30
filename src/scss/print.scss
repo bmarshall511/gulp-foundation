@@ -54,7 +54,8 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
     content: '';
   }
 
+  /* CSS4
   a:not(:local-link)::after {
     content: ' < ' attr(href) '> ';
-  }
+  }*/
 }

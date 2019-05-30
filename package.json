@@ -25,6 +25,7 @@
     "gulp-cond": "^1.0.0",
     "gulp-cssnano": "^2.1.3",
     "gulp-eslint": "^5.0.0",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
@@ -35,6 +36,7 @@
     "jquery": "^3.4.1",
     "motion-ui": "^2.0.3",
     "stylelint": "^9.10.1",
+    "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-config-sass-guidelines": "^5.4.0",
     "what-input": "^5.2.1",
     "yargs": "^12.0.5"

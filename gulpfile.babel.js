@@ -15,6 +15,8 @@ import sourcemaps from 'gulp-sourcemaps'
 import stylelint from 'gulp-stylelint'
 import todo from 'gulp-todo'
 import uglify from 'gulp-uglify'
+import notify from 'gulp-notify'
+import htmlmin from 'gulp-htmlmin';
 import { argv } from 'yargs'
 
 // If gulp was called in the terminal with the --prod flag, set the node
@@ -92,7 +94,6 @@ const js = {
   ],
   foundation: [paths.js + 'foundation.js'],
 }
-
 /**
  * Deletes files & folders in the compilied CSS, JS & image directories.
  */
@@ -101,7 +102,8 @@ export const clean = () => {
     paths.dist_js + '**',
     paths.dist_css + '**',
     paths.dist_img + '**',
-  ])
+    themeDir + 'index.html'
+  ]);
 }
 
 /**
@@ -154,6 +156,19 @@ export const lintJS = () => {
   return gulp
     .src([paths.js + '**/*.js', `${themeDir}gulpfile.babel.js`])
     .pipe(eslint())
+    .pipe(eslint.results(results => {
+      // Errors found
+      if ( results.errorCount ) {
+        results.map((error) => {
+          if ( error.messages.length ) {
+            notify.onError({
+              title   : `ESLint Error`,
+              message : error.filePath
+            })(error)
+          }
+        });
+      }
+    }))
     .pipe(eslint.format())
 }
 
@@ -211,6 +226,16 @@ export const generateTODO = () => {
     .pipe(gulp.dest(themeDir))
 }
 
+/**
+ * Compiles HTML files
+ */
+export const compileHTML = () => {
+  return gulp
+    .src('src/index.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest(themeDir));
+}
+
 // Runs all build tasks
 export const build = gulp.series(
   clean,
@@ -219,7 +244,8 @@ export const build = gulp.series(
   minImages,
   lintCSS,
   compileCSS,
-  generateTODO
+  generateTODO,
+  compileHTML
 )
 
 // Runs all build tasks, then watches files for changes to trigger a recompile.
@@ -231,5 +257,6 @@ export const watch = gulp.series(
   lintCSS,
   compileCSS,
   generateTODO,
+  compileHTML,
   gulp.parallel(watchSass, watchJS, watchImages)
 )
