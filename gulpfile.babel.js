@@ -15,7 +15,6 @@ import sourcemaps from 'gulp-sourcemaps'
 import stylelint from 'gulp-stylelint'
 import todo from 'gulp-todo'
 import uglify from 'gulp-uglify'
-import notify from 'gulp-notify'
 import htmlmin from 'gulp-htmlmin';
 import { argv } from 'yargs'
 
@@ -156,19 +155,6 @@ export const lintJS = () => {
   return gulp
     .src([paths.js + '**/*.js', `${themeDir}gulpfile.babel.js`])
     .pipe(eslint())
-    .pipe(eslint.results(results => {
-      // Errors found
-      if ( results.errorCount ) {
-        results.map((error) => {
-          if ( error.messages.length ) {
-            notify.onError({
-              title   : `ESLint Error`,
-              message : error.filePath
-            })(error)
-          }
-        });
-      }
-    }))
     .pipe(eslint.format())
 }
 
