@@ -134,8 +134,8 @@ textarea {
   }
 
   .success {
-    background-color: scale-color($successcolor, $callout-background-fade);
-    color: color-pick-contrast($successcolor, ($callout-font-color, $callout-font-color-alt));
+    background-color: scale-color($success-color, $callout-background-fade);
+    color: color-pick-contrast($success-color, ($callout-font-color, $callout-font-color-alt));
   }
 }
 
