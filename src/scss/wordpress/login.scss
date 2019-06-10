@@ -4,8 +4,6 @@
 @include foundation-typography;
 @include foundation-forms;
 
-@import 'plugins/nextend-social-login';
-
 body {
   font-size: $global-font-size;
 }
@@ -116,6 +114,28 @@ textarea {
 
   .button-primary {
     float: none;
+  }
+
+  #login_error,
+  .message,
+  .success {
+    background-color: $callout-background;
+    border-radius: $callout-radius;
+    box-shadow: none;
+    color: $callout-font-color;
+    border: $callout-border;
+    margin: $callout-margin;
+    padding: $callout-padding;
+  }
+
+  #login_error {
+    background-color: scale-color($alert-color, $callout-background-fade);
+    color: color-pick-contrast($alert-color, ($callout-font-color, $callout-font-color-alt));
+  }
+
+  .success {
+    background-color: scale-color($successcolor, $callout-background-fade);
+    color: color-pick-contrast($successcolor, ($callout-font-color, $callout-font-color-alt));
   }
 }
 
