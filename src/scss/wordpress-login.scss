@@ -1,0 +1,140 @@
+@import 'core/core';
+
+@include foundation-global-styles;
+@include foundation-typography;
+@include foundation-forms;
+
+body {
+  font-size: $global-font-size;
+}
+
+input[type=checkbox], 
+input[type=color], 
+input[type=date], 
+input[type=datetime-local], 
+input[type=datetime], 
+input[type=email], 
+input[type=month], 
+input[type=number], 
+input[type=password], 
+input[type=radio], 
+input[type=search], 
+input[type=tel], 
+input[type=text], 
+input[type=time], 
+input[type=url], 
+input[type=week], 
+select, 
+textarea {
+  border: $input-border;
+  box-shadow: $input-shadow;
+  color: $input-color;
+  transition: $input-transition;
+
+  &:focus {
+    background: $input-shadow-focus;
+  }
+}
+
+#login {
+  padding-left: map-fetch($grid-container-padding, small);
+  padding-right: map-fetch($grid-container-padding, small);
+
+  @include breakpoint(medium) {
+    padding-left: map-fetch($grid-container-padding, medium);
+    padding-right: map-fetch($grid-container-padding, medium);
+  }
+
+  form {
+    p,
+    p.submit {
+      margin-bottom: $paragraph-margin-bottom;
+    }
+  }
+}
+
+.login {
+  .input,
+  input[type="text"] {
+    background: $input-background;
+    font-size: $input-font-size;
+    padding: $input-padding;
+
+    &:focus {
+      background: $input-background-focus;
+    }
+  }
+
+  form {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    font-weight: $global-weight-normal;
+
+    .forgetmenot {
+      float: none;
+
+      label {
+        font-size: $form-label-font-size;
+        line-height: $form-label-line-height;
+      }
+    }
+
+    .input {
+      font-size: $input-font-size;
+      padding: $input-padding;
+    }
+  }
+
+  label {
+    font-size: $form-label-font-size;
+  }
+
+  #nav,
+  #backtoblog {
+    font-size: $global-font-size;
+    margin: 0 0 $paragraph-margin-bottom 0;
+    padding: 0;
+
+    a {
+      color: $anchor-color;
+      text-decoration: $anchor-text-decoration;
+
+      &:hover {
+        color: $anchor-color-hover;
+        text-decoration: $anchor-text-decoration-hover;
+      }
+    }
+  }
+
+  .button-primary {
+    float: none;
+  }
+}
+
+.wp-core-ui {
+  .button {
+    background: $button-background;
+    border: 0;
+    border-radius: $button-radius;
+    box-shadow: none;
+    color: $button-color;
+    font-family: $button-font-family;
+    font-size: map-fetch($button-sizes, default);
+    padding: $button-padding;
+    text-shadow: none;
+    transition: $button-transition;
+    width: 100%;
+
+    &:hover {
+      background: $button-background-hover;
+    }
+
+    &.button-large {
+      font-size: map-fetch($button-sizes, default);
+      height: auto;
+      line-height: inherit;
+      padding: $button-padding;
+    }
+  }
+}
