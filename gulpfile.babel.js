@@ -1,5 +1,3 @@
-'use strict'
-
 // Dependencies
 import autoprefixer from 'gulp-autoprefixer'
 import babel from 'gulp-babel'
