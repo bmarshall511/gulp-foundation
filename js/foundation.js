@@ -1,1 +1,8 @@
-"use strict";jQuery(document).foundation();
+"use strict";
+
+(function ($) {
+  'use strict';
+
+  $(document).foundation();
+})(jQuery);
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvdW5kYXRpb24uanMiXSwibmFtZXMiOlsiJCIsImRvY3VtZW50IiwiZm91bmRhdGlvbiIsImpRdWVyeSJdLCJtYXBwaW5ncyI6Ijs7QUFBQSxDQUFFLFVBQVVBLENBQVYsRUFBYztBQUNkOztBQUVBQSxFQUFBQSxDQUFDLENBQUVDLFFBQUYsQ0FBRCxDQUFjQyxVQUFkO0FBQ0QsQ0FKRCxFQUlJQyxNQUpKIiwiZmlsZSI6ImZvdW5kYXRpb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyIoIGZ1bmN0aW9uKCAkICkge1xuICAndXNlIHN0cmljdCc7XG5cbiAgJCggZG9jdW1lbnQgKS5mb3VuZGF0aW9uKCk7XG59KSggalF1ZXJ5ICk7XG4iXX0=

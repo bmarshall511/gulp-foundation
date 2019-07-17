@@ -36,26 +36,8 @@ textarea {
   }
 }
 
-#login {
-  padding-left: map-fetch($grid-container-padding, small);
-  padding-right: map-fetch($grid-container-padding, small);
-
-  @include breakpoint(medium) {
-    padding-left: map-fetch($grid-container-padding, medium);
-    padding-right: map-fetch($grid-container-padding, medium);
-  }
-
-  form {
-    p,
-    p.submit {
-      margin-bottom: $paragraph-margin-bottom;
-    }
-  }
-}
-
 .login {
-  .input,
-  input[type="text"] {
+  .input {
     background: $input-background;
     font-size: $input-font-size;
     padding: $input-padding;
@@ -63,6 +45,10 @@ textarea {
     &:focus {
       background: $input-background-focus;
     }
+  }
+
+  label {
+    font-size: $form-label-font-size;
   }
 
   form {
@@ -79,20 +65,6 @@ textarea {
         line-height: $form-label-line-height;
       }
     }
-
-    .input {
-      background: $input-background;
-      font-size: $input-font-size;
-      padding: $input-padding;
-
-      &:focus {
-        background: $input-background-focus;
-      }
-    }
-  }
-
-  label {
-    font-size: $form-label-font-size;
   }
 
   #nav,
@@ -136,6 +108,23 @@ textarea {
   .success {
     background-color: scale-color($success-color, $callout-background-fade);
     color: color-pick-contrast($success-color, ($callout-font-color, $callout-font-color-alt));
+  }
+}
+
+#login {
+  padding-left: map-fetch($grid-container-padding, small);
+  padding-right: map-fetch($grid-container-padding, small);
+
+  @include breakpoint(medium) {
+    padding-left: map-fetch($grid-container-padding, medium);
+    padding-right: map-fetch($grid-container-padding, medium);
+  }
+
+  form {
+    p,
+    p.submit {
+      margin-bottom: $paragraph-margin-bottom;
+    }
   }
 }
 
