@@ -1,4 +1,4 @@
-# gulp-foundation
+# gulp-foundation [![Build Status](https://travis-ci.com/bmarshall511/gulp-foundation.svg?branch=master)](https://travis-ci.com/bmarshall511/gulp-foundation)
 > Starter Gulp build configuration with ZURB Foundation integration.
 
 ## Installation
