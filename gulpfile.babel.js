@@ -252,28 +252,32 @@ export const inlineCSS = () => {
 }
 
 // Runs all build tasks
-export const build = gulp.series(
-  clean,
-  lintJS,
-  compileJS,
-  minImages,
-  lintCSS,
-  compileCSS,
-  generateTODO,
-  compileHTML,
-  inlineCSS
-)
+export const build = (done) => {
+  gulp.series(
+    clean, 
+    lintJS, 
+    compileJS, 
+    minImages, 
+    lintCSS, 
+    compileCSS, 
+    generateTODO, 
+    compileHTML,
+    inlineCSS
+  )(done);
+}
 
 // Runs all build tasks, then watches files for changes to trigger a recompile.
-export const watch = gulp.series(
-  clean,
-  lintJS,
-  compileJS,
-  minImages,
-  lintCSS,
-  compileCSS,
-  generateTODO,
-  compileHTML,
-  inlineCSS,
-  gulp.parallel(watchSass, watchJS, watchImages, watchHTML)
-)
+export const watch = (done) => {
+  gulp.series(
+    clean, 
+    lintJS, 
+    compileJS, 
+    minImages, 
+    lintCSS, 
+    compileCSS, 
+    generateTODO, 
+    compileHTML,
+    inlineCSS,
+    gulp.parallel(watchSass, watchJS, watchImages, watchHTML)
+  )(done);
+}
