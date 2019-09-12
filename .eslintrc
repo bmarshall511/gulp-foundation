@@ -11,6 +11,11 @@
     Drupal: true,
     jQuery: true,
     process: true,
-    document: true
+    document: true,
+    FOUNDATION: true,
+    fetch: true,
+    FormData: true,
+    ajaxurl,
+    console
   }
 }
