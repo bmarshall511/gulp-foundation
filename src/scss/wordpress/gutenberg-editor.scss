@@ -1,0 +1,7 @@
+@import '../core/core';
+
+.wp-block,
+.wp-block[data-align="wide"],
+.wp-block[data-align="full"] {
+  max-width: none;
+}
