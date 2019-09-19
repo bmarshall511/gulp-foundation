@@ -5,3 +5,9 @@
 .wp-block[data-align="full"] {
   max-width: none;
 }
+
+// Reset editor tools to default that are overwritten by Foundation.
+button,
+input {
+  overflow: hidden;
+}
