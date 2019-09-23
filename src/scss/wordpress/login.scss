@@ -4,153 +4,157 @@
 @include foundation-typography;
 @include foundation-forms;
 
+$input-height: ($input-font-size * unitless-calc($input-line-height)) + (get-side($input-padding, 'top') + get-side($input-padding, 'bottom')) - rem-calc(1);
+
 body {
   font-size: $global-font-size;
 }
 
-input[type=checkbox], 
-input[type=color], 
-input[type=date], 
-input[type=datetime-local], 
-input[type=datetime], 
-input[type=email], 
-input[type=month], 
-input[type=number], 
-input[type=password], 
-input[type=radio], 
-input[type=search], 
-input[type=tel], 
-input[type=text], 
-input[type=time], 
-input[type=url], 
-input[type=week], 
-select, 
-textarea {
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='color'],
+textarea,
+select {
   border: $input-border;
+  border-radius: $input-radius;
   box-shadow: $input-shadow;
   color: $input-color;
-  transition: $input-transition;
+  font-family: $input-font-family;
+  font-weight: $input-font-weight;
+  height: $input-height;
+  line-height: $input-line-height;
 
   &:focus {
-    background: $input-shadow-focus;
+    border: $input-border-focus;
+    box-shadow: $input-shadow-focus;
+    outline: none;
   }
+}
+
+input[type=checkbox]:checked:before {
+  color: color-pick-contrast($input-background);
 }
 
 .login {
-  .input {
-    background: $input-background;
-    font-size: $input-font-size;
-    padding: $input-padding;
-
-    &:focus {
-      background: $input-background-focus;
-    }
-  }
-
   label {
     font-size: $form-label-font-size;
   }
+}
 
-  form {
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    font-weight: $global-weight-normal;
+.login form .input,
+.login form input[type=checkbox],
+.login input[type=text] {
+  background: $input-background;
+}
 
-    .forgetmenot {
-      float: none;
+.login form .input,
+.login input[type=text] {
+  font-size: $input-font-size;
+  margin: 0 0 $form-spacing;
+  padding: $input-padding;
+}
 
-      label {
-        font-size: $form-label-font-size;
-        line-height: $form-label-line-height;
-      }
-    }
-  }
+.wp-core-ui .button,
+.wp-core-ui .button-primary,
+.wp-core-ui .button-secondary {
+  border: 1px solid transparent;
+  border-radius: $button-radius;
+  font-size: map-get($button-sizes, default);
+  margin: $button-margin;
+}
 
-  #nav,
-  #backtoblog {
-    font-size: $global-font-size;
-    margin: 0 0 $paragraph-margin-bottom 0;
-    padding: 0;
+.wp-core-ui .button:active,
+.wp-core-ui .button:focus {
+  outline: none;
+}
 
-    a {
-      color: $anchor-color;
-      text-decoration: $anchor-text-decoration;
+.wp-core-ui .button-primary {
+  background: $primary-color;
+  border-color: transparent;
+  box-shadow: none;
+  color: $button-color;
+  text-shadow: none;
+}
 
-      &:hover {
-        color: $anchor-color-hover;
-        text-decoration: $anchor-text-decoration-hover;
-      }
-    }
-  }
+.wp-core-ui .button-primary.focus,
+.wp-core-ui .button-primary.hover,
+.wp-core-ui .button-primary:focus,
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary.active,
+.wp-core-ui .button-primary.active:focus,
+.wp-core-ui .button-primary.active:hover,
+.wp-core-ui .button-primary:active {
+  background: $button-background-hover;
+  border-color: transparent;
+  box-shadow: none;
+  color: $button-color;
+}
 
-  .button-primary {
-    float: none;
-  }
+.wp-core-ui .button-group.button-large .button,
+.wp-core-ui .button.button-large {
+  height: auto;
+  line-height: 1;
+  padding: $button-padding;
+}
 
-  #login_error,
-  .message,
-  .success {
-    background-color: $callout-background;
-    border-radius: $callout-radius;
-    box-shadow: none;
-    color: $callout-font-color;
-    border: $callout-border;
-    margin: $callout-margin;
-    padding: $callout-padding;
-  }
+.login #backtoblog,
+.login #nav {
+  font-size: $small-font-size;
+}
 
-  #login_error {
-    background-color: scale-color($alert-color, $callout-background-fade);
-    color: color-pick-contrast($alert-color, ($callout-font-color, $callout-font-color-alt));
-  }
+.login #backtoblog a,
+.login #nav a {
+  color: $anchor-color;
+  text-decoration: $anchor-text-decoration;
 
-  .success {
-    background-color: scale-color($success-color, $callout-background-fade);
-    color: color-pick-contrast($success-color, ($callout-font-color, $callout-font-color-alt));
+  &:hover {
+    color: $anchor-color-hover;
+    text-decoration: $anchor-text-decoration-hover;
   }
 }
 
-#login {
-  padding-left: map-fetch($grid-container-padding, small);
-  padding-right: map-fetch($grid-container-padding, small);
-
-  @include breakpoint(medium) {
-    padding-left: map-fetch($grid-container-padding, medium);
-    padding-right: map-fetch($grid-container-padding, medium);
-  }
-
-  form {
-    p,
-    p.submit {
-      margin-bottom: $paragraph-margin-bottom;
-    }
-  }
+.login #login_error,
+.login .message, .login .success {
+  border: $callout-border;
+  border-radius: $callout-radius;
+  box-shadow: none;
+  margin: $callout-margin;
+  padding: $callout-padding;
 }
 
-.wp-core-ui {
-  .button {
-    background: $button-background;
-    border: 0;
-    border-radius: $button-radius;
-    box-shadow: none;
-    color: $button-color;
-    font-family: $button-font-family;
-    font-size: map-fetch($button-sizes, default);
-    padding: $button-padding;
-    text-shadow: none;
-    transition: $button-transition;
-    width: 100%;
+.login #login_error {
+  $background: scale-color($alert-color, $callout-background-fade);
+  background: $background;
+  color: color-pick-contrast($background, ($callout-font-color, $callout-font-color-alt));
+}
 
-    &:hover {
-      background: $button-background-hover;
-    }
-
-    &.button-large {
-      font-size: map-fetch($button-sizes, default);
-      height: auto;
-      line-height: inherit;
-      padding: $button-padding;
-    }
-  }
+.login .success {
+  $background: scale-color($success-color, $callout-background-fade);
+  background: $background;
+  color: color-pick-contrast($background, ($callout-font-color, $callout-font-color-alt));
 }
