@@ -84,6 +84,7 @@ input[type=checkbox]:checked:before {
 .wp-core-ui .button-secondary {
   border: 1px solid transparent;
   border-radius: $button-radius;
+  font-family: $button-font-family;
   font-size: map-get($button-sizes, default);
   margin: $button-margin;
 }
