@@ -11,3 +11,29 @@ button,
 input {
   overflow: hidden;
 }
+
+body {
+  padding: rem-calc(50 0);
+}
+
+.block-editor-block-list__layout,
+.editor-post-title {
+  padding-left: rem-calc(46);
+  padding-right: rem-calc(46);
+}
+
+.editor-post-title__block .editor-post-title__input {
+  color: $header-color;
+  font-family: $header-font-family;
+  font-size: rem-calc(map-fetch($header-styles, small h1 font-size));
+  font-style: $header-font-style;
+  font-weight: $header-font-weight;
+  line-height: $header-lineheight;
+  margin-bottom: $header-margin-bottom;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(map-fetch($header-styles, medium h1 font-size));
+  }
+}
