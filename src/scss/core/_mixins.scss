@@ -22,6 +22,7 @@
 	}
 
 	@font-face {
+    font-display: auto;
 		font-family: quote($name);
 		font-style: $style;
 		font-weight: $weight;
