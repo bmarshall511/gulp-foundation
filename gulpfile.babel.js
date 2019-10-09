@@ -66,7 +66,7 @@ const js = {
   'foundation/foundation.util.timer': [
     foundationDir + 'js/plugins/foundation.util.timer.js',
   ],
-  'foundation/foundation.nest': [
+  'foundation/foundation.util.nest': [
     foundationDir + 'js/plugins/foundation.util.nest.js',
   ],
   'foundation/foundation.offcanvas': [

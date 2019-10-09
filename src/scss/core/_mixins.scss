@@ -29,3 +29,60 @@
 		src: $src;
 	}
 }
+
+@mixin icon-menu($size: $header-height, $line-height: 1, $icon-width: 25) {
+  cursor: pointer;
+  display: inline-block;
+  height: $size;
+  width: $size;
+
+  span {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: rem-calc($icon-width);
+  }
+
+  span,
+  span::before,
+  span::after {
+    background-color: $white;
+    display: block;
+    height: rem-calc($line-height);
+    transition: all $offcanvas-transition-length;
+  }
+
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+  }
+
+  span::before {
+    margin-top: rem-calc($line-height * -7);
+  }
+
+  span::after {
+    margin-top: rem-calc($line-height * 7);
+  }
+}
+
+@mixin icon-menu-close {
+  span {
+    background-color: transparent;
+  }
+
+  span::before,
+  span::after {
+    margin-top: 0;
+  }
+
+  span::before {
+    transform: rotate(45deg);
+  }
+
+  span::after {
+    transform: rotate(-45deg);
+  }
+}
