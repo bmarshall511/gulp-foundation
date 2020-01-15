@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Gulp-foundation - v2.0.1</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Gulp-foundation - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Gulp-foundation - 2.0.1</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="general"><a href="#general">general</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="general-function"><a href="#general-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="general" data-name="map-fetch" data-type="function"><a href="#general-function-map-fetch">map-fetch</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="typography"><a href="#typography">typography</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-mixin"><a href="#typography-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="font-face" data-type="mixin"><a href="#typography-mixin-font-face">font-face</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="general"><div class="container">general</div></h1><section class="main__sub-section" id="general-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="general-function-map-fetch"><h3 class="item__heading"><a class="item__name" href="#function-map-fetch">map-fetch</a></h3><span class="item__since">Since 2.0.1</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function map-fetch($map, $keys) { 
+  $key: nth($keys, 1);
+  $length: length($keys);
+  $value: map-get($map, $key);
+  @if ($length &gt; 1) {
+    $rest: ();
+    @for $i from 2 through $length {
+      $rest: append($rest, nth($keys, $i));
+    }
+    @return map-fetch($value, $rest);
+  } @else {
+    @return $value;
+  }
+ }" data-collapsed="@function map-fetch($map, $keys) { ... }"><code>@function map-fetch($map, $keys) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Helper functions that returns the value of a scss array variable.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$map</code></th><td data-label="desc"><p>The scss array variable</p></td><td data-label="type"><code>Variable</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$keys</code></th><td data-label="desc"><p>Key of the array you want to return.</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Mixed</code> &mdash;<p>Value of the sprcified scss array variable key.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Basic Usage Sass</p></div><pre class="example__code language-scss"><code>$header-styles: (
+  small: (
+    &#39;h1&#39;: (&#39;font-size&#39;: 24),
+    &#39;h2&#39;: (&#39;font-size&#39;: 20),
+    &#39;h3&#39;: (&#39;font-size&#39;: 19),
+    &#39;h4&#39;: (&#39;font-size&#39;: 18),
+    &#39;h5&#39;: (&#39;font-size&#39;: 17),
+    &#39;h6&#39;: (&#39;font-size&#39;: 16),
+  ),
+  medium: (
+    &#39;h1&#39;: (&#39;font-size&#39;: 48),
+    &#39;h2&#39;: (&#39;font-size&#39;: 40),
+    &#39;h3&#39;: (&#39;font-size&#39;: 31),
+    &#39;h4&#39;: (&#39;font-size&#39;: 25),
+    &#39;h5&#39;: (&#39;font-size&#39;: 20),
+    &#39;h6&#39;: (&#39;font-size&#39;: 16),
+  ),
+);
+
+h1 {
+   font-size: map-fetch($header-styles, small h1 font-size);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>CSS Output</p></div><pre class="example__code language-css"><code>h1 {
+  font-size: 3rem;
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p><a href="https://benmarshall.me">Ben Marshall</a></p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="typography"><div class="container">typography</div></h1><section class="main__sub-section" id="typography-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="typography-mixin-font-face"><h3 class="item__heading"><a class="item__name" href="#mixin-font-face">font-face</a></h3><span class="item__since">Since 2.0.1</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { 
+	$src: null;
+
+	$extmods: (
+		eot: &quot;?&quot;,
+		svg: &quot;#&quot; + str-replace($name, &quot; &quot;, &quot;_&quot;)
+	);
+
+	$formats: (
+		otf: &quot;opentype&quot;,
+		ttf: &quot;truetype&quot;
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + &quot;.&quot; + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+    font-display: auto;
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+ }" data-collapsed="@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { ... }"><code>@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Helper mixin that generates font-face output.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>The name of the font family</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$path</code></th><td data-label="desc"><p>Relative path from <code>src</code> to the font files.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$weight</code></th><td data-label="desc"><p>Font weight.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$style</code></th><td data-label="desc"><p>Font style.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$exts</code></th><td data-label="desc"><p>List of avaiable file extensions.</p></td><td data-label="type"><code>List</code></td><td data-label="default"><code>eot woff2 woff ttf svg</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Basic Usage Sass</p></div><pre class="example__code language-scss"><code>@include font-face(&#39;Custom Font&#39;, &#39;../fonts/CustomFont/CustomFont-Bold&#39;, 900, normal, eot woff ttf svg);</code></pre></div><div class="item__example example"><div class="example__description"><p>CSS Output</p></div><pre class="example__code language-css"><code>@font-face {
+  font-display: auto;
+  font-family: &#39;Custom Font&#39;;
+  font-style: normal;
+  font-weight: 900;
+  src: url(&quot;../fonts/CustomFont/CustomFont-Bold.eot&quot;) format(&quot;eot&quot;),
+       url(&quot;../fonts/CustomFont/CustomFont-Bold.woff&quot;) format(&quot;woff&quot;),
+       url(&quot;../fonts/CustomFont/CustomFont-Bold.woff&quot;) format(&quot;ttf&quot;),
+       url(&quot;../fonts/CustomFont/CustomFont-Bold.woff&quot;) format(&quot;svg&quot;)
+}</code></pre></div><h3 class="item__sub-heading">Output</h3><div class="item__description"><p><code>@font-face</code> rule definitions.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p><a href="https://benmarshall.me">Ben Marshall</a></p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Gulp-foundation</span><!-- Version --> <span class="project-info__version">- v2.0.1</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

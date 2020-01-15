@@ -9,6 +9,7 @@ import eslint from 'gulp-eslint'
 import gulp from 'gulp'
 import imagemin from 'gulp-imagemin'
 import sass from 'gulp-sass'
+import sassdoc from 'sassdoc'
 import sourcemaps from 'gulp-sourcemaps'
 import stylelint from 'gulp-stylelint'
 import todo from 'gulp-todo'
@@ -147,6 +148,7 @@ export const compileCSS = () => {
   return gulp
     .src([paths.scss + '**/*.scss'])
     .pipe(cond(!PROD, sourcemaps.init()))
+    .pipe(sassdoc())
     .pipe(
       sass({
         includePaths: [

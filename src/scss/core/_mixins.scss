@@ -1,7 +1,32 @@
-/**
- * Sass Mixins
- */
-
+/// Helper mixin that generates font-face output.
+///
+/// @group typography
+/// @author [Ben Marshall](https://benmarshall.me)
+///
+/// @param {String} $name The name of the font family
+/// @param {String} $path Relative path from `src` to the font files.
+/// @param {String} $weight [null] Font weight.
+/// @param {String} $style [null] Font style.
+/// @param {List} $exts [eot woff2 woff ttf svg] List of avaiable file extensions.
+/// @output `@font-face` rule definitions.
+///
+/// @since 2.0.1
+/// @access public
+///
+/// @example scss - Basic Usage Sass
+///    @include font-face('Custom Font', '../fonts/CustomFont/CustomFont-Bold', 900, normal, eot woff ttf svg);
+///
+/// @example css - CSS Output
+///    @font-face {
+///      font-display: auto;
+///      font-family: 'Custom Font';
+///      font-style: normal;
+///      font-weight: 900;
+///      src: url("../fonts/CustomFont/CustomFont-Bold.eot") format("eot"),
+///           url("../fonts/CustomFont/CustomFont-Bold.woff") format("woff"),
+///           url("../fonts/CustomFont/CustomFont-Bold.woff") format("ttf"),
+///           url("../fonts/CustomFont/CustomFont-Bold.woff") format("svg")
+///    }
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
 	$src: null;
 

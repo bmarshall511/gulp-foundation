@@ -1,3 +1,43 @@
+/// Helper functions that returns the value of a scss array variable.
+///
+/// @group general
+/// @author [Ben Marshall](https://benmarshall.me)
+///
+/// @param {Variable} $map The scss array variable
+/// @param {List} $keys Key of the array you want to return.
+/// @return {Mixed} Value of the sprcified scss array variable key.
+///
+/// @since 2.0.1
+/// @access public
+///
+/// @example scss - Basic Usage Sass
+///    $header-styles: (
+///      small: (
+///        'h1': ('font-size': 24),
+///        'h2': ('font-size': 20),
+///        'h3': ('font-size': 19),
+///        'h4': ('font-size': 18),
+///        'h5': ('font-size': 17),
+///        'h6': ('font-size': 16),
+///      ),
+///      medium: (
+///        'h1': ('font-size': 48),
+///        'h2': ('font-size': 40),
+///        'h3': ('font-size': 31),
+///        'h4': ('font-size': 25),
+///        'h5': ('font-size': 20),
+///        'h6': ('font-size': 16),
+///      ),
+///    );
+///
+///    h1 {
+///       font-size: map-fetch($header-styles, small h1 font-size);
+///    }
+///
+/// @example css - CSS Output
+///    h1 {
+///      font-size: 3rem;
+///    }
 @function map-fetch($map, $keys) {
   $key: nth($keys, 1);
   $length: length($keys);
