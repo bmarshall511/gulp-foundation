@@ -1,0 +1,31 @@
+:root {
+  // 1. Global
+  // ---------
+  --global-font-size: #{$global-font-size};
+  --global-width: #{$global-width};
+  --global-lineheight: #{$global-lineheight};
+
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --warning-color: #{$warning-color};
+  --alert-color: #{$alert-color};
+
+  --light-gray: #{$light-gray};
+  --medium-gray: #{$medium-gray};
+  --dark-gray: #{$dark-gray};
+  --black: #{$black};
+  --white: #{$white};
+
+  --body-background: #{$body-background};
+  --body-font-color: #{$body-font-color};
+  --body-font-family: #{$body-font-family};
+
+  --global-margin: #{$global-margin};
+  --global-padding: #{$global-padding};
+
+  --global-weight-normal: #{$global-weight-normal};
+  --global-weight-bold: #{$global-weight-bold};
+
+  --global-radius: #{$global-radius};
+}
