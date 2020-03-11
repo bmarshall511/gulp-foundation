@@ -1,1 +1,14 @@
+// Variables specific to WP core
+$wp-breakpoints: (
+  small: 0,
+  medium: 600px,
+  large: 783px,
+);
+
+$wp-admin-bar-height: (
+  small: 46px,
+  medium: 46px,
+  large: 32px,
+);
+
 // Enter custom variables below.
