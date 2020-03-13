@@ -145,7 +145,7 @@ input[type=checkbox]:checked:before {
   border-radius: $callout-radius;
   box-shadow: none;
   margin: $callout-margin;
-  padding: $callout-padding;
+  padding: $global-padding;
 }
 
 .login #login_error {
