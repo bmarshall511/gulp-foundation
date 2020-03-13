@@ -15,7 +15,8 @@
     FOUNDATION: true,
     fetch: true,
     FormData: true,
-    ajaxurl,
-    console
+    ajaxurl: true,
+    console: true,
+    window: true
   }
 }
