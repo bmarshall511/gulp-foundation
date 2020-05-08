@@ -1,8 +1,1 @@
-"use strict";
-
-(function ($) {
-  'use strict';
-
-  $(document).foundation();
-})(jQuery);
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvdW5kYXRpb24uanMiXSwibmFtZXMiOlsiJCIsImRvY3VtZW50IiwiZm91bmRhdGlvbiIsImpRdWVyeSJdLCJtYXBwaW5ncyI6Ijs7QUFBQSxDQUFFLFVBQVVBLENBQVYsRUFBYztBQUNkOztBQUVBQSxFQUFBQSxDQUFDLENBQUVDLFFBQUYsQ0FBRCxDQUFjQyxVQUFkO0FBQ0QsQ0FKRCxFQUlJQyxNQUpKIiwic291cmNlc0NvbnRlbnQiOlsiKCBmdW5jdGlvbiggJCApIHtcbiAgJ3VzZSBzdHJpY3QnO1xuXG4gICQoIGRvY3VtZW50ICkuZm91bmRhdGlvbigpO1xufSkoIGpRdWVyeSApO1xuIl0sImZpbGUiOiJmb3VuZGF0aW9uLmpzIn0=
+"use strict";jQuery(document).foundation();
